@@ -168,6 +168,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +250,19 @@
     <Content Include="Content\images\posts\2.jpg" />
     <Content Include="Content\images\posts\3.jpg" />
     <Content Include="Content\images\posts\4.jpg" />
+    <Content Include="Content\images\product\galaxya54.jpg" />
+    <Content Include="Content\images\product\galaxynote10.jpg" />
+    <Content Include="Content\images\product\galaxys20.jpg" />
+    <Content Include="Content\images\product\galaxys23ultra.jpg" />
+    <Content Include="Content\images\product\galaxys8.jpg" />
+    <Content Include="Content\images\product\galaxys9.jpg" />
+    <Content Include="Content\images\product\galaxyzflip.jpg" />
+    <Content Include="Content\images\product\iphone11.jpg" />
+    <Content Include="Content\images\product\iphone12.jpg" />
+    <Content Include="Content\images\product\iphone14.jpg" />
+    <Content Include="Content\images\product\iphone6s.jpg" />
+    <Content Include="Content\images\product\iphonese2022.jpg" />
+    <Content Include="Content\images\product\iphoneXSMax.jpg" />
     <Content Include="Context\dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>dbModel.Context.cs</LastGenOutput>
@@ -356,7 +370,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

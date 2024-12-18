@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LeTanXuanKhang.Context;
+using LeTanXuanKhang.Models;
 namespace LeTanXuanKhang.Controllers
 {
     public class HomeController : Controller
@@ -11,8 +12,11 @@ namespace LeTanXuanKhang.Controllers
         WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
         public ActionResult Index()
         {
-            var lstCategory = objwebsiteBanHangEntities.Category.ToList();
-            return View(lstCategory);
+            HomeModel objHomeModel = new HomeModel();
+            objHomeModel.ListCategory = objwebsiteBanHangEntities.Category.ToList();
+            objHomeModel.ListProduct = objwebsiteBanHangEntities.Product.ToList();
+
+            return View(objHomeModel);
         }
 
         public ActionResult About()
