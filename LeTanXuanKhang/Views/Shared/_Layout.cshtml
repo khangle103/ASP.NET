@@ -65,7 +65,17 @@
                                         <i class="fa fa-user"></i>
                                         <span class="notify">3</span>
                                     </div>
-                                    <small class="text"> My profile </small>
+                                    @if (Session["idUser"] != null)
+                                    {
+                                        <a href="#">Trang Admin</a>
+                                        <a href="~/Home/Logout">Logout</a>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Home/Login">Login</a>
+
+                                    }
                                 </a>
                             </div>
                             <div class="widget-header mr-3">

@@ -15,10 +15,11 @@
                         <h6>DANH MỤC</h6>
                         <nav class="nav-home-aside">
                             <ul class="menu-category">
-                                @foreach (var item in Model.ListCategory)
+                                @foreach (var item in Model.ListCategory.Take(6))
                                 {
-                                    <li><a href="#">@item.Name</a></li>
-
+                                    <li>
+                                        @Html.ActionLink(item.Name, "Large", "Listing", new { @id = item.Id }, null)
+                                    </li>
                                 }
                             </ul>
                         </nav>
@@ -58,7 +59,7 @@
                     <div class="col-md d-none d-lg-block flex-grow-1">
                         <aside class="special-home-right">
                             <h6 class="bg-blue text-center text-white mb-0 p-2">Danh mục phổ biến</h6>
-                            @foreach (var item in Model.ListCategory.Take(3))
+                            @foreach (var item in Model.ListCategory.Where(n=>n.ShowOnHomePage == true).Take(3))
                             {
 
                                 <div class="card-banner border-bottom">
@@ -85,7 +86,7 @@
         <div class="card card-deal">
             <div class="col-heading content-body">
                 <header class="section-heading">
-                    <h3 class="section-title">Giảm giá</h3>
+                    <h3 class="section-title">Giảm giá sốc</h3>
                     <p>Hygiene equipments</p>
                 </header><!-- sect-heading -->
                 <div class="timer">
@@ -96,11 +97,11 @@
                 </div>
             </div> <!-- col.// -->
             <div class="row no-gutters items-wrap">
-                @foreach (var item in Model.ListProduct.Take(4))
+                @foreach (var item in Model.ListProduct.Where(n=>n.TypeId == 1).Take(4))
                 {
                     <div class="col-md col-6">
                         <figure class="card-product-grid card-sm">
-                            <a href="@Url.Action("Detail", "Product")" class="img-wrap">
+                            <a href="@Url.Action("Detail", "Product", new {item.Id})" class="img-wrap">
                                 <img src="~/Content/images/product/@item.Avatar">
                             </a>
                             <div class="text-wrap p-3">
@@ -120,7 +121,7 @@
     <!-- =============== SECTION 1 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Apple</h4>
+            <h4 class="title-section text-uppercase">APPLE</h4>
         </header>
 
         <div class="card card-home-category">
@@ -137,10 +138,10 @@
                 </div> <!-- col.// -->
                 <div class="col-md-9">
                     <ul class="row no-gutters bordered-cols">
-                        @foreach (var item in Model.ListProduct)
+                        @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 1))
                         {
                             <li class="col-6 col-lg-3 col-md-4">
-                                <a href="#" class="item">
+                                <a href="@Url.Action("Detail", "Product", new {item.Id})" class="item">
                                     <div class="card-body">
                                         <h6 class="title">@item.FullDescription</h6>
                                         <img class="img-sm float-right" src="~/Content/images/product/@item.Avatar">
@@ -160,7 +161,7 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Samsung</h4>
+            <h4 class="title-section text-uppercase">SAMSUNG</h4>
         </header>
 
         <div class="card card-home-category">
@@ -177,10 +178,10 @@
                 </div> <!-- col.// -->
                 <div class="col-md-9">
                     <ul class="row no-gutters bordered-cols">
-                        @foreach (var item in Model.ListProduct)
+                        @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 2))
                         {
                             <li class="col-6 col-lg-3 col-md-4">
-                                <a href="#" class="item">
+                                <a href="@Url.Action("Detail", "Product", new {item.Id})" class="item">
                                     <div class="card-body">
                                         <h6 class="title">@item.FullDescription</h6>
                                         <img class="img-sm float-right" src="~/Content/images/product/@item.Avatar">
@@ -262,15 +263,15 @@
     <section class="padding-bottom-sm">
 
         <header class="section-heading heading-line">
-             <h4 class="title-section text-uppercase">Tất cả sản phẩm</h4>
+             <h4 class="title-section text-uppercase">SẢN PHẨM ĐỀ XUẤT</h4>
         </header>
 
         <div class="row row-sm">
-            @foreach (var item in Model.ListProduct)
+            @foreach (var item in Model.ListProduct.Where(n => n.TypeId == 2).Take(12))
             {
                 <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                     <div href="@Url.Action("Detail", "Product")" class="card card-sm card-product-grid">
-                        <a href="@Url.Action("Detail", "Product")" class="img-wrap"> <img src="~/Content/images/product/@item.Avatar"> </a>
+                        <a href="@Url.Action("Detail", "Product", new {item.Id})" class="img-wrap"> <img src="~/Content/images/product/@item.Avatar"> </a>
                         <figcaption class="info-wrap">
                             <a href="@Url.Action("Detail", "Product")" class="title">@item.Name</a>
                             <div class="price mt-1">@item.Price $</div> <!-- price-wrap.// -->

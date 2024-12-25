@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeTanXuanKhang.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,17 @@ namespace LeTanXuanKhang.Controllers
     public class ListingController : Controller
     {
         // GET: Listing
+        WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
+
         public ActionResult Grid()
         {
             return View();
         }
-        public ActionResult Large()
+        public ActionResult Large(int id)
         {
-            return View();
+            var lstLarge = objwebsiteBanHangEntities.Product.Where(n => n.CategoryId == id).ToList();
+
+            return View(lstLarge);
         }
     }
 }
