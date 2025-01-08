@@ -10,11 +10,11 @@ namespace LeTanXuanKhang.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
+        WebsiteBanHangEntities4 objwebsiteBanHangEntities = new WebsiteBanHangEntities4();
 
         public ActionResult Detail(int id)
         {
-            var objProduct = objwebsiteBanHangEntities.Product.Where(n => n.Id == id).FirstOrDefault();
+            var objProduct = objwebsiteBanHangEntities.Products.Where(n => n.Id == id).FirstOrDefault();
             return View(objProduct);
         }
     }

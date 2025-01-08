@@ -61,20 +61,24 @@
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header mr-3">
                                 <a href="#" class="widget-view">
-                                    <div class="icon-area">
-                                        <i class="fa fa-user"></i>
-                                        <span class="notify">3</span>
-                                    </div>
                                     @if (Session["idUser"] != null)
                                     {
-                                        <a href="#">Trang Admin</a>
-                                        <a href="~/Home/Logout">Logout</a>
-
+                                        <a href="@Url.Action("Index", "Home")" class="widget-view">
+                                            <div class="icon-area">
+                                                <i class="fa fa-user"></i>
+                                                <span class="notify">3</span>
+                                            </div>
+                                            <small class="text"> @Session["FullName"] </small>
+                                        </a>
                                     }
                                     else
                                     {
-                                        <a href="~/Home/Login">Login</a>
-
+                                        <a href="@Url.Action("Login", "Home")" class="widget-view">
+                                            <div class="icon-area">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                            <small class="text"> Chưa đăng nhập </small>
+                                        </a>
                                     }
                                 </a>
                             </div>
@@ -96,9 +100,12 @@
                                 </a>
                             </div>
                             <div class="widget-header">
-                                <a href="#" class="widget-view">
+                                <a href="@Url.Action("Cart", "Cart")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
+                                        <span class="notify" id="CartCount">
+                                            @Session["count"]
+                                        </span>
                                     </div>
                                     <small class="text"> Cart </small>
                                 </a>

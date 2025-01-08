@@ -155,10 +155,16 @@
     <Compile Include="Context\Order.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\OrderDetail.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\Product.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\User.cs">
+    <Compile Include="Context\sysdiagrams.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\User_New.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CartController.cs" />
@@ -171,6 +177,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2169,8 +2176,8 @@
     <Content Include="Content\images\product\zenbookduo14.jpg" />
     <Content Include="Context\dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
       <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Context\dbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2228,13 +2235,6 @@
     <Content Include="fonts\roboto\Roboto-Medium.ttf" />
     <Content Include="fonts\roboto\Roboto-Regular.ttf" />
     <Content Include="fonts\roboto\Roboto-Thin.ttf" />
-    <EntityDeploy Include="Context\dbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Context\dbModel.edmx.diagram">
-      <DependentUpon>dbModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -2317,6 +2317,13 @@
     <Content Include="Content\Admin\plugins\summernote\summernote.js.map" />
     <Content Include="Content\Admin\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\Admin\plugins\toastr\toastr.js.map" />
+    <EntityDeploy Include="Context\dbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Context\dbModel.edmx.diagram">
+      <DependentUpon>dbModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2348,12 +2355,12 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Content\Content.cshtml" />
     <Content Include="Views\Category\AllCategory.cshtml" />
-    <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Listing\Grid.cshtml" />
     <Content Include="Views\Listing\Large.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,12 +12,13 @@ namespace LeTanXuanKhang.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class User_New
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> Status { get; set; }
-        public Nullable<System.DateTime> CreatedOnUtc { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public Nullable<bool> IsAdmin { get; set; }
     }
 }

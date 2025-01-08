@@ -12,12 +12,16 @@ namespace LeTanXuanKhang.Controllers
 {
     public class HomeController : Controller
     {
-        WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
+        WebsiteBanHangEntities4 objwebsiteBanHangEntities = new WebsiteBanHangEntities4
+
+
+
+            ();
         public ActionResult Index()
         {
             HomeModel objHomeModel = new HomeModel();
             objHomeModel.ListCategory = objwebsiteBanHangEntities.Category.ToList();
-            objHomeModel.ListProduct = objwebsiteBanHangEntities.Product.ToList();
+            objHomeModel.ListProduct = objwebsiteBanHangEntities.Products.ToList();
 
             return View(objHomeModel);
         }
@@ -42,16 +46,16 @@ namespace LeTanXuanKhang.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User _user)
+        public ActionResult Register(User_New _user)
         {
             if (ModelState.IsValid)
             {
-                var check = objwebsiteBanHangEntities.User.FirstOrDefault(s => s.Email == _user.Email);
+                var check = objwebsiteBanHangEntities.User_New.FirstOrDefault(s => s.Email == _user.Email);
                 if (check == null)
                 {
                     _user.Password = GetMD5(_user.Password);
                     objwebsiteBanHangEntities.Configuration.ValidateOnSaveEnabled = false;
-                    objwebsiteBanHangEntities.User.Add(_user);
+                    objwebsiteBanHangEntities.User_New.Add(_user);
                     objwebsiteBanHangEntities.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -80,7 +84,7 @@ namespace LeTanXuanKhang.Controllers
 
 
                 var f_password = GetMD5(password);
-                var data = objwebsiteBanHangEntities.User.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
+                var data = objwebsiteBanHangEntities.User_New.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() > 0)
                 {
                     //add session

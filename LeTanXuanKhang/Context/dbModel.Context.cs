@@ -13,10 +13,11 @@ namespace LeTanXuanKhang.Context
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebsiteBanHangEntities : DbContext
+    public partial class WebsiteBanHangEntities4 : DbContext
     {
-        public WebsiteBanHangEntities()
-            : base("name=WebsiteBanHangEntities")
+
+        public WebsiteBanHangEntities4()
+            : base("name=WebsiteBanHangEntities4")
         {
         }
     
@@ -28,7 +29,9 @@ namespace LeTanXuanKhang.Context
         public virtual DbSet<Brand> Brand { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<User_New> User_New { get; set; }
     }
 }

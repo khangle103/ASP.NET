@@ -1,20 +1,32 @@
 ﻿@model List<LeTanXuanKhang.Context.Category>
 
-
 @{
     ViewBag.Title = "AllCategory";
 }
 
+<style>
+    .img-wrap {
+        display: flex !important;
+        justify-content: center !important; /* Căn giữa hình ảnh theo chiều ngang */
+        align-items: center !important; /* Căn giữa hình ảnh theo chiều dọc */
+        height: 200px !important; /* Đặt chiều cao của vùng chứa hình ảnh nếu cần */
+    }
+
+        .img-wrap img {
+            max-width: 100% !important; /* Hình ảnh không vượt quá chiều rộng của phần tử cha */
+            max-height: 100% !important; /* Hình ảnh không vượt quá chiều cao của phần tử cha */
+            object-fit: contain !important; /* Đảm bảo hình ảnh không bị cắt xén và giữ tỷ lệ */
+        }
+</style>
+
 <section class="section-content padding-y">
     <div class="container">
-
         <nav class="row">
             @foreach (var item in Model)
             {
                 <div class="col-md-3">
-
                     <div class="card card-category">
-                        <div class="img-wrap" style="background: #ffd7d7">
+                        <div class="img-wrap">
                             <img src="~/Content/images/category/@item.Avatar">
                         </div>
                         <div class="card-body">
@@ -22,19 +34,15 @@
                         </div>
                     </div>
                 </div> <!-- col.// -->
-
             }
-
         </nav> <!-- row.// -->
-
-
     </div> <!-- container .//  -->
 </section>
+
 <!-- ========================= SECTION CONTENT END// ========================= -->
 <!-- ========================= SECTION SUBSCRIBE  ========================= -->
 <section class="padding-y-lg bg-light border-top">
     <div class="container">
-
         <p class="pb-2 text-center">Delivering the latest product trends and industry news straight to your inbox</p>
 
         <div class="row justify-content-md-center">
@@ -50,8 +58,6 @@
                 <small class="form-text">We’ll never share your email address with a third-party. </small>
             </div> <!-- col-md-6.// -->
         </div>
-
-
     </div>
 </section>
 <!-- ========================= SECTION SUBSCRIBE END// ========================= -->

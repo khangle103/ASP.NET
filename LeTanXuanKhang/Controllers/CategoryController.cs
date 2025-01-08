@@ -9,7 +9,7 @@ namespace LeTanXuanKhang.Controllers
 {
     public class CategoryController : Controller
     {
-        WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
+        WebsiteBanHangEntities4 objwebsiteBanHangEntities = new WebsiteBanHangEntities4();
 
         // GET: Category
         public ActionResult AllCategory()

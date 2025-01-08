@@ -10,7 +10,7 @@ namespace LeTanXuanKhang.Controllers
     public class ListingController : Controller
     {
         // GET: Listing
-        WebsiteBanHangEntities objwebsiteBanHangEntities = new WebsiteBanHangEntities();
+        WebsiteBanHangEntities4 objwebsiteBanHangEntities = new WebsiteBanHangEntities4();
 
         public ActionResult Grid()
         {
@@ -18,7 +18,7 @@ namespace LeTanXuanKhang.Controllers
         }
         public ActionResult Large(int id)
         {
-            var lstLarge = objwebsiteBanHangEntities.Product.Where(n => n.CategoryId == id).ToList();
+            var lstLarge = objwebsiteBanHangEntities.Products.Where(n => n.CategoryId == id).ToList();
 
             return View(lstLarge);
         }

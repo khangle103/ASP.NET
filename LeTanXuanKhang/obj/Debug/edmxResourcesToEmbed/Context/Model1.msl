@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="WebsiteBanHangModelStoreContainer" CdmEntityContainer="WebsiteBanHangEntities4">
+  <EntityContainerMapping StorageEntityContainer="WebsiteBanHangModelStoreContainer" CdmEntityContainer="WebsiteBanHangEntities3">
     <EntitySetMapping Name="Brand">
       <EntityTypeMapping TypeName="WebsiteBanHangModel.Brand">
         <MappingFragment StoreEntitySet="Brand">
@@ -36,19 +36,10 @@
         <MappingFragment StoreEntitySet="Order">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetail">
-      <EntityTypeMapping TypeName="WebsiteBanHangModel.OrderDetail">
-        <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -32,20 +32,12 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
-    <Property Name="UserId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Price" Type="float" />
     <Property Name="Status" Type="int" />
     <Property Name="CreatedOnUtc" Type="datetime" />
-  </EntityType>
-  <EntityType Name="OrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="OrderId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -93,7 +85,6 @@
     <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_New" EntityType="Self.User_New" Schema="dbo" store:Type="Tables" />

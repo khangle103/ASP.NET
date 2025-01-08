@@ -32,20 +32,12 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Price" Type="Double" />
     <Property Name="Status" Type="Int32" />
     <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="OrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OrderId" Type="Int32" Nullable="false" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -89,11 +81,10 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IsAdmin" Type="Boolean" />
   </EntityType>
-  <EntityContainer Name="WebsiteBanHangEntities4" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="WebsiteBanHangEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Brand" EntityType="Self.Brand" />
     <EntitySet Name="Category" EntityType="Self.Category" />
     <EntitySet Name="Order" EntityType="Self.Order" />
-    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" />
     <EntitySet Name="Product" EntityType="Self.Product" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="User_New" EntityType="Self.User_New" />

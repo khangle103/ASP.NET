@@ -51,6 +51,8 @@ G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\roslyn\vbc.rsp
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\roslyn\VBCSCompiler.exe
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\roslyn\VBCSCompiler.exe.config
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\Antlr3.Runtime.dll
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.dll
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.SqlServer.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\Microsoft.Web.Infrastructure.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\Newtonsoft.Json.dll
@@ -62,6 +64,8 @@ G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.WebPages.Deployment.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.WebPages.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.WebPages.Razor.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\WebGrease.dll
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.xml
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.SqlServer.xml
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.Helpers.xml
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.Mvc.xml
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\System.Web.Optimization.xml
@@ -77,7 +81,3 @@ G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.csproj.CoreCom
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.csproj.CopyComplete
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.pdb
-G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.dll
-G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.SqlServer.dll
-G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.xml
-G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\EntityFramework.SqlServer.xml
