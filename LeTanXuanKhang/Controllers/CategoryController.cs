@@ -14,7 +14,7 @@ namespace LeTanXuanKhang.Controllers
         // GET: Category
         public ActionResult AllCategory()
         {
-            var lstCategory = objwebsiteBanHangEntities.Category.ToList();
+            var lstCategory = objwebsiteBanHangEntities.Categories.ToList();
             return View(lstCategory);
         }
     }

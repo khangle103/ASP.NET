@@ -11,7 +11,8 @@ namespace LeTanXuanKhang.Context
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class User_New
     {
         public int Id { get; set; }
@@ -20,5 +21,7 @@ namespace LeTanXuanKhang.Context
         public string Email { get; set; }
         public string Password { get; set; }
         public Nullable<bool> IsAdmin { get; set; }
+        [NotMapped]
+        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
     }
 }

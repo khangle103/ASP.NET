@@ -81,3 +81,7 @@ G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.csproj.CoreCom
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.csproj.CopyComplete
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.dll
 G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\obj\Debug\LeTanXuanKhang.pdb
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\PagedList.dll
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\PagedList.Mvc.dll
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\PagedList.xml
+G:\.NET C#\LeTanXuanKhang\LeTanXuanKhang\bin\PagedList.Mvc.xml

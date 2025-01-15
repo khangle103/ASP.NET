@@ -26,10 +26,10 @@ namespace LeTanXuanKhang.Context
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Brand> Brand { get; set; }
-        public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User_New> User_New { get; set; }

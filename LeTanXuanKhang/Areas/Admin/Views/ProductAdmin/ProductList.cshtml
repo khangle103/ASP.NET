@@ -1,0 +1,171 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<LeTanXuanKhang.Context.Product>
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>QUẢN LÝ SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("Tạo sản phẩm mới", "Create")
+</p>
+@using (Html.BeginForm("ProductList", "ProductAdmin", FormMethod.Get))
+{
+    <p>
+        Tìm tên sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ShortDes)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().PriceDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().TypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().BrandId)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDes)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandId)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("ProductList", new { page, currentFilter = ViewBag.CurrentFilter }))
+
+<style>
+    /* Style the pagination container */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-right: 5px;
+    }
+
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Style individual pagination links */
+    .pagination a,
+    .pagination span {
+        text-decoration: none;
+        color: #007bff; /* Blue color for the link */
+        padding: 8px 15px;
+        margin: 0 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        /* Hover effect for pagination links */
+        .pagination a:hover,
+        .pagination .prev:hover,
+        .pagination .next:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    /* Active pagination link style */
+    .pagination .active a {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    /* Disabled pagination link style */
+    .pagination .disabled a,
+    .pagination .disabled span {
+        color: #ccc;
+        border-color: #ccc;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    /* Style the first and last page buttons */
+    .pagination .first, .pagination .last {
+        font-weight: bold;
+    }
+
+    /* Style the previous and next buttons */
+    .pagination .prev, .pagination .next {
+        font-weight: bold;
+    }
+
+    /* Optional: Add some spacing around the pagination controls */
+    .pagination a {
+        margin: 0 5px;
+    }
+
+    /* Styling for the page indicator (e.g., "Page 1 of 10") */
+</style>

@@ -11,7 +11,8 @@ namespace LeTanXuanKhang.Context
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Category
     {
         public int Id { get; set; }
@@ -23,5 +24,8 @@ namespace LeTanXuanKhang.Context
         public Nullable<bool> Deleted { get; set; }
         public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         public Nullable<System.DateTime> UpdatedOnUtc { get; set; }
+
+        [NotMapped]
+        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
     }
 }

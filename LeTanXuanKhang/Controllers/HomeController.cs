@@ -20,7 +20,7 @@ namespace LeTanXuanKhang.Controllers
         public ActionResult Index()
         {
             HomeModel objHomeModel = new HomeModel();
-            objHomeModel.ListCategory = objwebsiteBanHangEntities.Category.ToList();
+            objHomeModel.ListCategory = objwebsiteBanHangEntities.Categories.ToList();
             objHomeModel.ListProduct = objwebsiteBanHangEntities.Products.ToList();
 
             return View(objHomeModel);

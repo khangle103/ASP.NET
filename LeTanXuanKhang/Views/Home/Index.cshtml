@@ -59,15 +59,15 @@
                     <div class="col-md d-none d-lg-block flex-grow-1">
                         <aside class="special-home-right">
                             <h6 class="bg-blue text-center text-white mb-0 p-2">Danh mục phổ biến</h6>
-                            @foreach (var item in Model.ListCategory.Where(n=>n.ShowOnHomePage == true).Take(3))
+                            @foreach (var item in Model.ListCategory.Where(n => n.ShowOnHomePage == true).Take(3))
                             {
 
                                 <div class="card-banner border-bottom">
                                     <div class="py-3" style="width:80%">
                                         <h6 class="card-title">@item.Name</h6>
-                                        <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
+                                        <a href="@Url.Action("Large", "Listing", new {item.Id})" class="btn btn-secondary btn-sm"> Source now </a>
                                     </div>
-                                    <img src="~/Content/images/items/1.jpg" height="80" class="img-bg">
+                                    <img src="~/Content/images/category/@item.Avatar" height="80" class="img-bg">
                                 </div>
                             }
 
@@ -97,7 +97,7 @@
                 </div>
             </div> <!-- col.// -->
             <div class="row no-gutters items-wrap">
-                @foreach (var item in Model.ListProduct.Where(n=>n.TypeId == 1).Take(4))
+                @foreach (var item in Model.ListProduct.Where(n => n.TypeId == 1).Take(4))
                 {
                     <div class="col-md col-6">
                         <figure class="card-product-grid card-sm">
@@ -127,15 +127,18 @@
         <div class="card card-home-category">
             <div class="row no-gutters">
                 <div class="col-md-3">
+                    @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 1).Take(1))
+                    {
+                        <div class="home-category-banner bg-light-orange">
+                            <h5 class="title">Best trending clothes only for summer</h5>
+                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <a href="@Url.Action("Large", "Listing", new {item.Id})" class="btn btn-outline-primary rounded-pill">Source now</a>
+                            <img src="~/Content/images/product/@item.Avatar" class="img-bg">
+                        </div>
+                    }
+                        
 
-                    <div class="home-category-banner bg-light-orange">
-                        <h5 class="title">Best trending clothes only for summer</h5>
-                        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-                        <img src="~/Content/images/items/2.jpg" class="img-bg">
-                    </div>
-
-                </div> <!-- col.// -->
+                    </div> <!-- col.// -->
                 <div class="col-md-9">
                     <ul class="row no-gutters bordered-cols">
                         @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 1))
@@ -168,12 +171,15 @@
             <div class="row no-gutters">
                 <div class="col-md-3">
 
-                    <div class="home-category-banner bg-light-orange">
-                        <h5 class="title">Machinery items for manufacturers</h5>
-                        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-                        <img src="~/Content/images/items/14.jpg" class="img-bg">
-                    </div>
+                    @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 2).Take(1))
+                    {
+                        <div class="home-category-banner bg-light-orange">
+                            <h5 class="title">Best trending clothes only for summer</h5>
+                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <a href="@Url.Action("Large", "Listing", new {item.Id})" class="btn btn-outline-primary rounded-pill">Source now</a>
+                            <img src="~/Content/images/product/@item.Avatar" class="img-bg">
+                        </div>
+                    }
 
                 </div> <!-- col.// -->
                 <div class="col-md-9">
@@ -198,72 +204,13 @@
     <!-- =============== SECTION 2 END =============== -->
     <!-- =============== SECTION REQUEST =============== -->
 
-    <section class="padding-bottom">
 
-        <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Request for Quotation</h4>
-        </header>
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card-banner banner-quote overlay-gradient" style="background-image: url('~/Content/images/banners/banner9.jpg');">
-                    <div class="card-img-overlay white">
-                         <h3 class="card-title">An easy way to send request to suppliers</h3>
-                        <p class="card-text" style="max-width: 400px">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt.
-                        </p>
-                        <a href="" class="btn btn-primary rounded-pill">Learn more</a>
-                    </div>
-                </div>
-            </div> <!-- col // -->
-            <div class="col-md-4">
-
-                <div class="card card-body">
-                    <h4 class="title py-3">One Request, Multiple Quotes</h4>
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" name="" placeholder="What are you looking for?" type="text">
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" placeholder="Quantity" name="" type="text">
-
-                                <select class="custom-select form-control">
-                                    <option>Pieces</option>
-                                    <option>Litres</option>
-                                    <option>Tons</option>
-                                    <option>Gramms</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group text-muted">
-                            <p>Select template type:</p>
-                            <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="option1">
-                                <div class="form-check-label">Request price</div>
-                            </label>
-                            <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="option2">
-                                <div class="form-check-label">Request a sample</div>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-warning">Request for quote</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div> <!-- col // -->
-        </div> <!-- row // -->
-    </section>
 
     <!-- =============== SECTION REQUEST .//END =============== -->
     <!-- =============== SECTION ITEMS =============== -->
     <section class="padding-bottom-sm">
-
         <header class="section-heading heading-line">
-             <h4 class="title-section text-uppercase">SẢN PHẨM ĐỀ XUẤT</h4>
+            <h4 class="title-section text-uppercase">SẢN PHẨM ĐỀ XUẤT</h4>
         </header>
 
         <div class="row row-sm">
@@ -271,19 +218,24 @@
             {
                 <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                     <div href="@Url.Action("Detail", "Product")" class="card card-sm card-product-grid">
-                        <a href="@Url.Action("Detail", "Product", new {item.Id})" class="img-wrap"> <img src="~/Content/images/product/@item.Avatar"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="@Url.Action("Detail", "Product")" class="title">@item.Name</a>
-                            <div class="price mt-1">@item.Price $</div> <!-- price-wrap.// -->
+                        <a href="@Url.Action("Detail", "Product", new { item.Id })" class="img-wrap">
+                            <img src="~/Content/images/product/@item.Avatar">
+                        </a>
+                        <figcaption class="info-wrap" style="text-align: center;">
+                            <!-- CSS nội tuyến -->
+                            <a href="@Url.Action("Detail", "Product")" class="title" style="display: block; margin-bottom: 5px; font-weight: bold;">
+                                @item.Name
+                            </a>
+                            <div class="price mt-1" style="font-weight: bold; color: #333;">
+                                @string.Format("{0:#,##0} VNĐ", item.Price)
+                            </div>
                         </figcaption>
                     </div>
                 </div> <!-- col.// -->
-
             }
-          
-
-        </div> <!-- row.// -->
+        </div>
     </section>
+
     <!-- =============== SECTION ITEMS .//END =============== -->
     <!-- =============== SECTION SERVICES =============== -->
     <section class="padding-bottom">
@@ -321,7 +273,7 @@
                 </article> <!-- card.// -->
             </div> <!-- col.// -->
             <div class="col-md-3 col-sm-6">
-                 <article class="card card-post">
+                <article class="card card-post">
                     <img src="~/Content/images/posts/4.jpg" class="card-img-top">
                     <div class="card-body">
                         <h6 class="title">Ocean and Air Shipping</h6>
